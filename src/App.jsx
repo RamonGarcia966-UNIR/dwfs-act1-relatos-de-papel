@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 import Landing from "./views/Landing";
 import HomePage from "./views/HomePage";
 import BookDetails from "./views/BookDetails";
@@ -11,7 +14,7 @@ import Cart from "./views/Cart";
 function AppContent() {
   return (
     <div>
-      <h1>Relatos de Papel</h1>
+      <Header />
 
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -21,6 +24,9 @@ function AppContent() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+
+      <Footer />
+
     </div>
   );
 }
