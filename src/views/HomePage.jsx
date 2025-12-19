@@ -2,6 +2,9 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { books } from "../data/books";
 import { useCart } from "../hooks/useCart";
+import SearchBar from "../components/SearchBar";
+import BookList from "../components/BookList";
+
 
 export default function HomePage() {
   const { addToCart } = useCart();
@@ -25,32 +28,15 @@ export default function HomePage() {
         | <Link to="/checkout">Checkout</Link>
       </p>
 
-      <div>
-        <label htmlFor="book-search">Buscar</label>
-        <input
-          id="book-search"
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Buscar por título…"
-        />
-      </div>
+    <SearchBar value={search} onChange={setSearch} />
 
       <h3>Libros disponibles</h3>
 
-      {filteredBooks.length === 0 ? (
-        <p>No hay resultados para “{search}”.</p>
-      ) : (
-      <ul>
-        {filteredBooks.map((book) => (
-          <li key={book.id}>
-            <Link to={`/book/${book.id}`}>{book.title}</Link> – {book.author} –{" "}
-            {book.price.toFixed(2).replace(".", ",")} €
-            <button onClick={() => addToCart(book)}>Añadir al carrito</button>
-          </li>
-        ))}
-      </ul>
-    )}
+     <BookList
+        books={filteredBooks}
+        onAddToCart={addToCart}
+      />
+
     </section>
   );
 }
