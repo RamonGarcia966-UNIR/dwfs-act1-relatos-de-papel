@@ -3,7 +3,7 @@ import { useCart } from "../hooks/useCart";
 import "./Layout.css";
 
 export default function Header() {
-  const { cart } = useCart();
+  const { totals } = useCart();
 
   return (
     <header className="layout__header">
@@ -13,7 +13,7 @@ export default function Header() {
 
       <nav className="layout__nav">
         <Link className="layout__navLink" to="/home">Home</Link>
-        <Link className="layout__navLink" to="/cart">Carrito ({cart.length})</Link>
+        <Link className="layout__navLink" to="/cart">Carrito ({totals.itemsCount})</Link>
         <Link className="layout__navLink" to="/checkout">Checkout</Link>
       </nav>
     </header>

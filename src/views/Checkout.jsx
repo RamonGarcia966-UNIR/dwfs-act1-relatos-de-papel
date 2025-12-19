@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 
 export default function Checkout() {
-  const { cart, clearCart } = useCart();
+  const { cart, clearCart, totals } = useCart();
   const navigate = useNavigate();
 
   const total = cart.reduce((acc, item) => acc + item.price, 0);
@@ -34,15 +34,15 @@ export default function Checkout() {
         <>
           <h3>Resumen</h3>
           <ul>
-            {cart.map((item, index) => (
-              <li key={`${item.id}-${index}`}>
-                {item.title} – {item.price.toFixed(2).replace(".", ",")} €
+            {cart.map((item) => (
+              <li key={item.id}>
+                {item.title} x {item.qty} – {(item.price * item.qty).toFixed(2).replace(".", ",")} €
               </li>
             ))}
           </ul>
 
           <p>
-            <strong>Total:</strong> {total.toFixed(2).replace(".", ",")} €
+            <strong>Total:</strong> {totals.totalPrice.toFixed(2).replace(".", ",")} €
           </p>
 
           <button onClick={handlePay}>Pagar</button>

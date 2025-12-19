@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 
 export default function Cart() {
-  const { cart, removeFromCart, clearCart } = useCart();
+  const { cart, addToCart, decreaseQty, removeFromCart, clearCart, totals  } = useCart();
   const navigate = useNavigate();
 
   return (
@@ -19,16 +19,22 @@ export default function Cart() {
       ) : (
         <>
           <ul>
-            {cart.map((item, index) => (
-              <li key={`${item.id}-${index}`}>
-                <strong>{item.title}</strong> –{" "}
-                {item.price.toFixed(2).replace(".", ",")} €
-                <button onClick={() => removeFromCart(item.id)}>
-                  Quitar
-                </button>
+            {cart.map((item) => (
+              <li key={item.id}>
+                <strong>{item.title}</strong> – {item.price.toFixed(2).replace(".", ",")} €
+                <div>
+                  <button onClick={() => decreaseQty(item.id)}>-</button>
+                  <span>{item.qty}</span>
+                  <button onClick={() => addToCart(item)}>+</button>
+                  <button onClick={() => removeFromCart(item.id)}>Quitar Producto</button>
+                </div>
               </li>
             ))}
           </ul>
+
+          <p>
+            <strong>Total:</strong>{totals.totalPrice.toFixed(2).replace(".",",")} €
+          </p>
 
           <p>
             <button onClick={() => navigate("/checkout")}>Ir a checkout</button>{" "}
