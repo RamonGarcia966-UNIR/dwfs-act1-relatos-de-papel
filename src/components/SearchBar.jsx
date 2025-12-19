@@ -1,7 +1,7 @@
 export default function SearchBar({ value, onChange }) {
   return (
-    <div>
-      <label htmlFor="book-search">Buscar</label>
+    <div className="search__wrap">
+      <label className="search__label" htmlFor="book-search">Buscar</label>
       <input
         id="book-search"
         type="text"

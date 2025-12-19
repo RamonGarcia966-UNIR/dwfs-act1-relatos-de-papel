@@ -7,14 +7,14 @@ export default function Header() {
 
   return (
     <header className="layout__header">
-      <Link to="/home">
-        <h1>Relatos de Papel</h1>
+      <Link to="/home" className="layout__brandLink"> 
+        <h1 className="layout__brand">Relatos de Papel</h1>
       </Link>
 
       <nav className="layout__nav">
-        <Link to="/home">Home</Link>
-        <Link to="/cart">Carrito ({cart.length})</Link>
-        <Link to="/checkout">Checkout</Link>
+        <Link className="layout__navLink" to="/home">Home</Link>
+        <Link className="layout__navLink" to="/cart">Carrito ({cart.length})</Link>
+        <Link className="layout__navLink" to="/checkout">Checkout</Link>
       </nav>
     </header>
   );

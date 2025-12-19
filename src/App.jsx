@@ -13,7 +13,7 @@ import Cart from "./views/Cart";
 
 function AppContent() {
   return (
-    <div>
+    <div className="layout__container">
       <Header />
 
       <Routes>

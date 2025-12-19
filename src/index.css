@@ -1,8 +1,197 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg: #f7f7fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --primary: #4f46e5;
+  --primary-2: #4338ca;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 16px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--primary);
+}
+
+input {
+  font: inherit;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  outline: none;
+  background: var(--card);
+}
+
+input:focus {
+  border-color: var(--primary);
+}
+
+/* Layout BEM */
+.layout__container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.layout__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.layout__brand {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+.layout__nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.layout__navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.layout__navLink:hover {
+  border-color: var(--primary);
+  text-decoration: none;
+}
+
+.layout__footer {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 16px;
+  color: var(--muted);
+}
+
+.layout__brandLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Page BEM */
+.page__title {
+  margin: 8px 0 10px;
+  font-size: 22px;
+}
+
+.page__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 14px;
+}
+
+/* Search BEM */
+.search__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0 16px;
+}
+
+.search__label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Books BEM */
+.books__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.books__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.books__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.books__title {
+  font-weight: 700;
+}
+
+.books__meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.books__price {
+  font-weight: 700;
+}
+
+.books__btn {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.books__btn:hover {
+  background: var(--primary-2);
+}
+
+.books__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
