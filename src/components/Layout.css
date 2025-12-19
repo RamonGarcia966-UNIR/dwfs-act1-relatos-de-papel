@@ -1,16 +1,16 @@
-.app-header {
+.layout__header {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
 }
 
-.app-header nav {
+.layout__nav {
   display: flex;
   gap: 12px;
 }
 
-.app-footer {
+.layout__footer {
   margin-top: 24px;
   padding-top: 12px;
   border-top: 1px solid #ddd;

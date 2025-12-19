@@ -6,12 +6,12 @@ export default function Header() {
   const { cart } = useCart();
 
   return (
-    <header className="app-header">
+    <header className="layout__header">
       <Link to="/home">
         <h1>Relatos de Papel</h1>
       </Link>
 
-      <nav>
+      <nav className="layout__nav">
         <Link to="/home">Home</Link>
         <Link to="/cart">Carrito ({cart.length})</Link>
         <Link to="/checkout">Checkout</Link>
