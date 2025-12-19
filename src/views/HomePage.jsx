@@ -10,18 +10,17 @@ export default function HomePage() {
       <h2>Página principal</h2>
 
       <p>
-        <Link to="/cart">Ver carrito</Link>
+        <Link to="/cart">Ver carrito</Link>{" "}
+        | <Link to="/checkout">Checkout</Link>
       </p>
 
       <h3>Libros disponibles</h3>
       <ul>
         {books.map((book) => (
           <li key={book.id}>
-            <strong>{book.title}</strong> – {book.author} –{" "}
+            <Link to={`/book/${book.id}`}>{book.title}</Link> – {book.author} –{" "}
             {book.price.toFixed(2).replace(".", ",")} €
-            <button onClick={() => addToCart(book)}>
-              Añadir al carrito
-            </button>
+            <button onClick={() => addToCart(book)}>Añadir al carrito</button>
           </li>
         ))}
       </ul>
