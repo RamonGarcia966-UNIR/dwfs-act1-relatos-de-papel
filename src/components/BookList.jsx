@@ -1,6 +1,6 @@
 import BookItem from "./BookItem";
 
-export default function BookList({ books, onAddToCart }) {
+export default function BookList({ books }) {
   if (books.length === 0) {
     return <p>No hay libros para mostrar.</p>;
   }
@@ -11,7 +11,6 @@ export default function BookList({ books, onAddToCart }) {
         <BookItem
           key={book.id}
           book={book}
-          onAddToCart={onAddToCart}
         />
       ))}
     </ul>

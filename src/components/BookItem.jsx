@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../hooks/useCart";
 
-export default function BookItem({ book, onAddToCart }) {
+export default function BookItem({ book }) {
+    const { addToCart } = useCart();
+
     return (
         <li className="books__item">
             <div className="books__cover-wrap">
@@ -16,7 +19,7 @@ export default function BookItem({ book, onAddToCart }) {
 
             <div className="books__actions">
                 <span className="books__price">{book.price.toFixed(2).replace(".", ",")} €</span>
-                <button className="books__btn" onClick={() => onAddToCart(book)}>
+                <button className="books__btn" onClick={() => addToCart(book)}>
                     Añadir al carrito
                 </button>
             </div>
