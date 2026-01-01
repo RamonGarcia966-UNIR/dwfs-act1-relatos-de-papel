@@ -45,7 +45,13 @@ export default function Checkout() {
             <strong>Total:</strong> {totals.totalPrice.toFixed(2).replace(".", ",")} €
           </p>
 
-          <button onClick={handlePay}>Pagar</button>
+          <p>
+            <button onClick={handlePay}>Pagar</button>
+          </p>
+          <p>
+            <Link to="/cart">← Volver al carrito</Link>
+          </p>
+          
         </>
       )}
     </section>

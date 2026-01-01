@@ -32,6 +32,7 @@ export default function Cart() {
             ))}
           </ul>
 
+         
           <p>
             <strong>Total:</strong>{totals.totalPrice.toFixed(2).replace(".",",")} €
           </p>
@@ -39,6 +40,10 @@ export default function Cart() {
           <p>
             <button onClick={() => navigate("/checkout")}>Ir a checkout</button>{" "}
             <button onClick={clearCart}>Vaciar carrito</button>
+          </p>
+
+          <p>
+            <Link to="/home">← Seguir comprando</Link>
           </p>
         </>
       )}

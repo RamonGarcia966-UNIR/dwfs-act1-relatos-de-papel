@@ -34,7 +34,7 @@ export default function BookDetails() {
       </p>
 
       <p>
-        <Link to="/home">Volver a la tienda</Link>
+        <button onClick={() => navigate(-1)}>← Volver</button>{" "}
       </p>
     </section>
   );
