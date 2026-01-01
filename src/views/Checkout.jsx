@@ -5,8 +5,6 @@ export default function Checkout() {
   const { cart, clearCart, totals } = useCart();
   const navigate = useNavigate();
 
-  const total = cart.reduce((acc, item) => acc + item.price, 0);
-
   const handlePay = () => {
     if (cart.length === 0) {
       alert("No hay productos en el carrito.");
