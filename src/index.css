@@ -281,6 +281,7 @@ input:focus {
 .books__btn:hover {
   background-color: var(--color-primary-dark);
 }
+
 /* 
   Book Detail View (BEM)
   Block: book-detail
@@ -397,7 +398,7 @@ input:focus {
   display: grid;
   gap: var(--space-xl);
   /* Desktop Layout: List | Summary */
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
@@ -683,11 +684,9 @@ input:focus {
 
 @media (min-width: 640px) {
   .home__controls {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
   }
-  
+
   .home__controls .page__title {
     margin-bottom: 0;
   }
@@ -727,4 +726,3 @@ input:focus {
   background: rgba(79, 70, 229, 0.05);
   text-decoration: none;
 }
-
