@@ -30,21 +30,29 @@ export default function BookDetails() {
       </div>
 
       <div className="book-detail__card">
-        <div className="book-detail__info">
-          <p className="book-detail__meta">Autor</p>
-          <p className="book-detail__author">{book.author}</p>
+        <div className="book-detail__grid">
+          <div className="book-detail__cover-wrap">
+            <img src={book.image} alt={book.title} className="book-detail__cover" />
+          </div>
 
-          <p className="book-detail__meta">Precio</p>
-          <p className="book-detail__price">{book.price.toFixed(2).replace(".", ",")} €</p>
-        </div>
+          <div className="book-detail__content">
+            <div className="book-detail__info">
+              <p className="book-detail__meta">Autor</p>
+              <p className="book-detail__author">{book.author}</p>
 
-        <div className="book-detail__actions">
-          <button className="book-detail__btn book-detail__btn--primary" onClick={() => addToCart(book)}>
-            Añadir al carrito
-          </button>
-          <button className="book-detail__btn book-detail__btn--secondary" onClick={() => navigate("/cart")}>
-            Ir al carrito
-          </button>
+              <p className="book-detail__meta">Precio</p>
+              <p className="book-detail__price">{book.price.toFixed(2).replace(".", ",")} €</p>
+            </div>
+
+            <div className="book-detail__actions">
+              <button className="book-detail__btn book-detail__btn--primary" onClick={() => addToCart(book)}>
+                Añadir al carrito
+              </button>
+              <button className="book-detail__btn book-detail__btn--secondary" onClick={() => navigate("/cart")}>
+                Ir al carrito
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
