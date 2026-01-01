@@ -13,7 +13,7 @@ export default function Landing() {
     }, [navigate]);
 
     return (
-        <section className="page__content landing">
+        <section className="page landing">
             <div className="landing__content">
                 <h2 className="landing__title">Relatos de Papel</h2>
                 <p className="landing__text">Bienvenido a su librería online de confianza.</p>

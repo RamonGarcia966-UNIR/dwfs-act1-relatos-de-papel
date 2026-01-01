@@ -6,7 +6,7 @@ export default function Cart() {
   const navigate = useNavigate();
 
   return (
-    <section className="page__content cart">
+    <section className="page cart">
       <h2 className="page__title">Tu Carrito</h2>
 
       {cart.length === 0 ? (

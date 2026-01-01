@@ -18,7 +18,7 @@ export default function HomePage() {
   }, [search]);
 
   return (
-    <section className="page__content home">
+    <section className="page home">
       <div className="home__controls">
         <h2 className="page__title">Catálogo</h2>
         <SearchBar value={search} onChange={setSearch} />

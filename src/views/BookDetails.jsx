@@ -23,7 +23,7 @@ export default function BookDetails() {
   }
 
   return (
-    <section className="page__content book-detail">
+    <section className="page book-detail">
       <div className="book-detail__header">
         <Link onClick={() => navigate(-1)} className="book-detail__back">Volver al catálogo</Link>
         <h2 className="book-detail__title">{book.title}</h2>

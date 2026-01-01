@@ -12,9 +12,9 @@ export default function Header() {
       </Link>
 
       <nav className="layout__nav">
-        <Link className="layout__navLink" to="/home">Home</Link>
-        <Link className="layout__navLink" to="/cart">Carrito ({totals.itemsCount})</Link>
-        <Link className="layout__navLink" to="/checkout">Checkout</Link>
+        <Link className="layout__nav-link" to="/home">Home</Link>
+        <Link className="layout__nav-link" to="/cart">Carrito ({totals.itemsCount})</Link>
+        <Link className="layout__nav-link" to="/checkout">Checkout</Link>
       </nav>
     </header>
   );

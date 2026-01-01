@@ -18,7 +18,7 @@ export default function Checkout() {
   };
 
   return (
-    <section className="page__content checkout">
+    <section className="page checkout">
       <h2 className="page__title">Checkout</h2>
 
       {cart.length === 0 ? (
