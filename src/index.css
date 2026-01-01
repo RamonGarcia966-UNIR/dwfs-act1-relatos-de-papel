@@ -239,6 +239,7 @@ input:focus {
   justify-content: space-between;
   border-top: 1px solid var(--color-border);
   padding-top: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .books__price {
@@ -293,7 +294,6 @@ input:focus {
 */
 .book-detail {
   max-width: 1000px;
-  /* Increased from 600px to accommodate image + content */
   margin: 0 auto;
 }
 
@@ -311,11 +311,20 @@ input:focus {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  padding: 8px 16px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  transition: var(--transition);
 }
 
 .book-detail__back:hover {
-  color: var(--color-primary);
+  text-decoration: none;
+  background: var(--color-bg-body);
+  border-color: var(--color-text-muted);
+  color: var(--color-text-main);
 }
 
 .book-detail__title {
@@ -337,7 +346,6 @@ input:focus {
   margin-bottom: var(--space-xl);
   display: grid;
   grid-template-columns: auto 1fr;
-  /* Changed from fixed 100px */
   gap: var(--space-md) var(--space-lg);
   align-items: baseline;
 }
@@ -360,7 +368,6 @@ input:focus {
   font-weight: 700;
   color: var(--color-primary);
   white-space: nowrap;
-  /* Prevent euro symbol wrapping */
 }
 
 .book-detail__actions {
@@ -377,17 +384,6 @@ input:focus {
   text-align: center;
   transition: var(--transition);
   white-space: nowrap;
-}
-
-/* ... existing btn modifiers ... */
-
-/* Update .books__price in BookItem matches as well */
-.books__price {
-  font-weight: 700;
-  font-size: var(--text-lg);
-  color: var(--color-text-main);
-  white-space: nowrap;
-  /* Prevent euro symbol wrapping */
 }
 
 .book-detail__btn--primary {
@@ -670,7 +666,6 @@ input:focus {
   font-size: 3rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: var(--space-md);
@@ -806,4 +801,5 @@ input:focus {
 
 .book-detail__content {
   flex-grow: 1;
+  min-width: 0;
 }
