@@ -20,19 +20,13 @@ export default function HomePage() {
   }, [search]);
 
   return (
-    <section>
-      <h2>Página principal</h2>
+    <section className="page__content home">
+      <div className="home__controls">
+        <h2 className="page__title">Catálogo</h2>
+        <SearchBar value={search} onChange={setSearch} />
+      </div>
 
-      <p>
-        <Link to="/cart">Ver carrito</Link>{" "}
-        | <Link to="/checkout">Checkout</Link>
-      </p>
-
-    <SearchBar value={search} onChange={setSearch} />
-
-      <h3>Libros disponibles</h3>
-
-     <BookList
+      <BookList
         books={filteredBooks}
         onAddToCart={addToCart}
       />

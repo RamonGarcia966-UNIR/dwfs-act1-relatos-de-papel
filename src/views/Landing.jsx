@@ -13,12 +13,14 @@ export default function Landing() {
     }, [navigate]);
 
     return (
-        <section>
-            <h2>Relatos de Papel</h2>
-            <p>Bienvenido a la librería online.</p>
-            <p>Serás redirigido a la página principal en 5 segundos…</p>
+        <section className="page__content landing">
+            <div className="landing__content">
+                <h2 className="landing__title">Relatos de Papel</h2>
+                <p className="landing__text">Bienvenido a su librería online de confianza.</p>
+                <p className="landing__subtext">Serás redirigido a la página principal en en 5 segundos…</p>
 
-            <button onClick={() => navigate("/home")}>Entrar ahora</button>
+                <button className="btn btn--primary landing__btn" onClick={() => navigate("/home")}>Entrar ahora</button>
+            </div>
         </section>
     );
 }

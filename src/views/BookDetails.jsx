@@ -23,19 +23,30 @@ export default function BookDetails() {
   }
 
   return (
-    <section>
-      <h2>{book.title}</h2>
-      <p>Autor: {book.author}</p>
-      <p>Precio: {book.price.toFixed(2).replace(".", ",")} €</p>
+    <section className="page__content book-detail">
+      <div className="book-detail__header">
+        <Link onClick={() => navigate(-1)} className="book-detail__back">← Volver</Link>
+        <h2 className="book-detail__title">{book.title}</h2>
+      </div>
 
-      <p>
-        <button onClick={() => addToCart(book)}>Añadir al carrito</button>{" "}
-        <button onClick={() => navigate("/cart")}>Ir al carrito</button>
-      </p>
+      <div className="book-detail__card">
+        <div className="book-detail__info">
+          <p className="book-detail__meta">Autor</p>
+          <p className="book-detail__author">{book.author}</p>
 
-      <p>
-        <button onClick={() => navigate(-1)}>← Volver</button>{" "}
-      </p>
+          <p className="book-detail__meta">Precio</p>
+          <p className="book-detail__price">{book.price.toFixed(2).replace(".", ",")} €</p>
+        </div>
+
+        <div className="book-detail__actions">
+          <button className="book-detail__btn book-detail__btn--primary" onClick={() => addToCart(book)}>
+            Añadir al carrito
+          </button>
+          <button className="book-detail__btn book-detail__btn--secondary" onClick={() => navigate("/cart")}>
+            Ir al carrito
+          </button>
+        </div>
+      </div>
     </section>
   );
 }

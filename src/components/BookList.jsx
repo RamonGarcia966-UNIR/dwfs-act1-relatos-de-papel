@@ -6,7 +6,7 @@ export default function BookList({ books, onAddToCart }) {
   }
 
   return (
-    <ul lassName="books__list">
+    <ul className="books__list">
       {books.map((book) => (
         <BookItem
           key={book.id}
