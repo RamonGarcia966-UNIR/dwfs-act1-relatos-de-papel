@@ -245,6 +245,7 @@ input:focus {
   font-weight: 700;
   font-size: var(--text-lg);
   color: var(--color-text-main);
+  white-space: nowrap;
 }
 
 /* Standard Button Class */
@@ -286,8 +287,13 @@ input:focus {
   Book Detail View (BEM)
   Block: book-detail
 */
+/* 
+  Book Detail View (BEM)
+  Block: book-detail
+*/
 .book-detail {
-  max-width: 600px;
+  max-width: 1000px;
+  /* Increased from 600px to accommodate image + content */
   margin: 0 auto;
 }
 
@@ -330,7 +336,8 @@ input:focus {
 .book-detail__info {
   margin-bottom: var(--space-xl);
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: auto 1fr;
+  /* Changed from fixed 100px */
   gap: var(--space-md) var(--space-lg);
   align-items: baseline;
 }
@@ -352,6 +359,8 @@ input:focus {
   font-size: var(--text-xl);
   font-weight: 700;
   color: var(--color-primary);
+  white-space: nowrap;
+  /* Prevent euro symbol wrapping */
 }
 
 .book-detail__actions {
@@ -367,6 +376,18 @@ input:focus {
   font-weight: 600;
   text-align: center;
   transition: var(--transition);
+  white-space: nowrap;
+}
+
+/* ... existing btn modifiers ... */
+
+/* Update .books__price in BookItem matches as well */
+.books__price {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--color-text-main);
+  white-space: nowrap;
+  /* Prevent euro symbol wrapping */
 }
 
 .book-detail__btn--primary {
@@ -649,6 +670,7 @@ input:focus {
   font-size: 3rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: var(--space-md);
