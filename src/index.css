@@ -116,6 +116,9 @@ input:focus {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--space-lg);
+  position: sticky;
+  top: var(--space-md);
+  z-index: 1000;
 }
 
 .layout__brand {
