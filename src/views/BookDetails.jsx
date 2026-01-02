@@ -1,25 +1,18 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { books } from "../data/books";
-import { useCart } from "../hooks/useCart";
+import BookNotFound from "../components/BookNotFound";
+import BookInfo from "../components/BookInfo";
+import BookActions from "../components/BookActions";
 
 export default function BookDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { addToCart } = useCart();
 
   const bookId = Number(id);
   const book = books.find((b) => b.id === bookId);
 
   if (!book) {
-    return (
-      <section>
-        <h2>Libro no encontrado</h2>
-        <p>No existe un libro con id {id}.</p>
-        <p>
-          <Link to="/home">Volver a la tienda</Link>
-        </p>
-      </section>
-    );
+    return <BookNotFound bookId={id} />;
   }
 
   return (
@@ -36,25 +29,12 @@ export default function BookDetails() {
           </div>
 
           <div className="book-detail__content">
-            <div className="book-detail__info">
-              <p className="book-detail__meta">Autor</p>
-              <p className="book-detail__author">{book.author}</p>
-
-              <p className="book-detail__meta">Precio</p>
-              <p className="book-detail__price">{book.price.toFixed(2).replace(".", ",")} €</p>
-            </div>
-
-            <div className="book-detail__actions">
-              <button className="book-detail__btn book-detail__btn--primary" onClick={() => addToCart(book)}>
-                Añadir al carrito
-              </button>
-              <button className="book-detail__btn book-detail__btn--secondary" onClick={() => navigate("/cart")}>
-                Ir al carrito
-              </button>
-            </div>
+            <BookInfo author={book.author} price={book.price} />
+            <BookActions book={book} />
           </div>
         </div>
       </div>
     </section>
   );
 }
+

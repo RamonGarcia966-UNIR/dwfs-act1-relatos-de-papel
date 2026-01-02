@@ -1,56 +1,20 @@
-import { useNavigate, Link } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
+import CartEmpty from "../components/CartEmpty";
+import CheckoutOrderSummary from "../components/CheckoutOrderSummary";
 
 export default function Checkout() {
-  const { cart, clearCart, totals } = useCart();
-  const navigate = useNavigate();
-
-  const handlePay = () => {
-    if (cart.length === 0) {
-      alert("No hay productos en el carrito.");
-      navigate("/home");
-      return;
-    }
-
-    alert("Pago realizado con éxito");
-    clearCart();
-    navigate("/home");
-  };
+  const { cart } = useCart();
 
   return (
     <section className="page checkout">
       <h2 className="page__title">Checkout</h2>
 
       {cart.length === 0 ? (
-        <div className="cart__empty">
-          <p>No hay productos en el carrito.</p>
-          <Link to="/home" className="btn btn--primary">Volver a la tienda</Link>
-        </div>
+        <CartEmpty />
       ) : (
-        <div className="checkout__container">
-          <div className="checkout__summary">
-            <h3 className="checkout__subtitle">Resumen del pedido</h3>
-            <ul className="checkout__list">
-              {cart.map((item) => (
-                <li key={item.id} className="checkout__item">
-                  <span className="checkout__item-name">{item.title} x {item.qty}</span>
-                  <span className="checkout__item-price">{(item.price * item.qty).toFixed(2).replace(".", ",")} €</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="checkout__total">
-              <span>Total a pagar:</span>
-              <span className="checkout__total-val">{totals.totalPrice.toFixed(2).replace(".", ",")} €</span>
-            </div>
-          </div>
-
-          <div className="checkout__actions">
-            <button className="btn btn--primary checkout__btn-pay" onClick={handlePay}>Confirmar y Pagar</button>
-            <Link to="/cart" className="btn btn--text">Volver al carrito</Link>
-          </div>
-        </div>
+        <CheckoutOrderSummary />
       )}
     </section>
   );
 }
+

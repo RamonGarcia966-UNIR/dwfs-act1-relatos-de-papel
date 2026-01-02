@@ -19,7 +19,9 @@ export default function Landing() {
                 <p className="landing__text">Bienvenido a su librería online de confianza.</p>
                 <p className="landing__subtext">Serás redirigido a la página principal en en 5 segundos…</p>
 
-                <button className="btn btn--primary landing__btn" onClick={() => navigate("/home")}>Entrar ahora</button>
+                <button className="btn btn--primary landing__btn" onClick={() => navigate("/home")}>
+                    Entrar ahora
+                </button>
             </div>
         </section>
     );
