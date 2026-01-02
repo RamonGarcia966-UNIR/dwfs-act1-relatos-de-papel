@@ -277,6 +277,11 @@ input:focus {
   background-color: var(--color-primary-dark);
 }
 
+.btn--primary:active {
+  transform: scale(0.95);
+  background-color: var(--color-primary-dark);
+}
+
 /* We can map .books__btn to .btn .btn--primary if we want, or define it separately */
 .books__btn {
   padding: 8px 16px;
@@ -289,6 +294,11 @@ input:focus {
 }
 
 .books__btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.books__btn:active {
+  transform: scale(0.95);
   background-color: var(--color-primary-dark);
 }
 
@@ -399,6 +409,11 @@ input:focus {
   background: var(--color-primary-dark);
 }
 
+.book-detail__btn--primary:active {
+  transform: scale(0.95);
+  background: var(--color-primary-dark);
+}
+
 .book-detail__btn--secondary {
   background: transparent;
   border: 1px solid var(--color-border);
@@ -407,6 +422,11 @@ input:focus {
 
 .book-detail__btn--secondary:hover {
   border-color: var(--color-text-muted);
+  background: var(--color-bg-body);
+}
+
+.book-detail__btn--secondary:active {
+  transform: scale(0.95);
   background: var(--color-bg-body);
 }
 
@@ -725,6 +745,10 @@ input:focus {
   background: var(--color-bg-body);
 }
 
+.btn--outline:active {
+  transform: scale(0.95);
+}
+
 .btn--danger {
   color: var(--color-danger);
   border-color: var(--color-border);
@@ -733,6 +757,11 @@ input:focus {
 .btn--danger:hover {
   background: #fef2f2;
   border-color: var(--color-danger);
+}
+
+.btn--danger:active {
+  transform: scale(0.95);
+  background: #fee2e2;
 }
 
 .btn--text {
@@ -747,6 +776,10 @@ input:focus {
   color: var(--color-primary);
   background: rgba(79, 70, 229, 0.05);
   text-decoration: none;
+}
+
+.btn--text:active {
+  transform: scale(0.95);
 }
 
 /* 
@@ -807,4 +840,34 @@ input:focus {
 .book-detail__content {
   flex-grow: 1;
   min-width: 0;
+}
+
+/* 
+  Cart Counter Animation
+  Highlights the cart counter when items are added/removed
+*/
+@keyframes cartPulse {
+  0% {
+    transform: scale(1);
+    background-color: transparent;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: var(--color-success);
+    color: white;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: transparent;
+  }
+}
+
+.cart-count-highlight {
+  animation: cartPulse 0.5s ease-in-out;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
 }
