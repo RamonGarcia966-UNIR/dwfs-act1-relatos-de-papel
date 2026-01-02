@@ -296,10 +296,6 @@ input:focus {
   Book Detail View (BEM)
   Block: book-detail
 */
-/* 
-  Book Detail View (BEM)
-  Block: book-detail
-*/
 .book-detail {
   max-width: 1000px;
   margin: 0 auto;
